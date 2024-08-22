@@ -1,10 +1,12 @@
 package org.example.lesson_1
 
 fun main() {
-    val seconds: Int = 6480
-    val fullHour: String = String.format("%02d", seconds / 3600)
-    val fullMinutes: String = String.format("%02d", (seconds % 3600) / 60)
-    val fullSeconds: String = String.format("%02d", (seconds % 60))
+    val seconds = 6480
+    val secondsInHour = 3600
+    val minutesInHour = 60
+    val fullHour = seconds / secondsInHour
+    val fullMinutes = (seconds % secondsInHour) / minutesInHour
+    val fullSeconds = seconds % minutesInHour
 
-    println("$fullHour:$fullMinutes:$fullSeconds")
+    println("%02d:%02d:%02d".format(fullHour, fullMinutes, fullSeconds))
 }
