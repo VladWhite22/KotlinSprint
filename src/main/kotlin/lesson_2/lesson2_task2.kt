@@ -2,16 +2,16 @@ package org.example.lesson_2
 
 fun main() {
     val numberOfEmployers: Int = 50
-    val sallaryEmployers: Int = 30000
+    val salaryEmployers: Int = 30000
     val numbersOfInterns: Int = 30
-    val sallaryInterns: Int = 20000
+    val salaryInterns: Int = 20000
 
-    val employersSallarySum: Int = numberOfEmployers * sallaryEmployers
-    val sumSallary: Int = numberOfEmployers * sallaryEmployers + numbersOfInterns * sallaryInterns
+    val employersSalarySum: Int = numberOfEmployers * salaryEmployers
+    val sumSalary: Int = numberOfEmployers * salaryEmployers + numbersOfInterns * salaryInterns
     val averageSalary: Int =
-        ((numberOfEmployers * sallaryEmployers) + (numbersOfInterns * sallaryInterns)) / (numbersOfInterns + numberOfEmployers)
+        ((numberOfEmployers * salaryEmployers) + (numbersOfInterns * salaryInterns)) / (numbersOfInterns + numberOfEmployers)
 
-    println(employersSallarySum)
-    println(sumSallary)
+    println(employersSalarySum)
+    println(sumSalary)
     println(averageSalary)
 }
