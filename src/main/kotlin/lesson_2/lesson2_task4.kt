@@ -2,14 +2,16 @@ package org.example.lesson_2
 
 fun main() {
     val crystalOre: Byte = 7
-    val ferumOre: Byte = 11
+    val ferrumOre: Byte = 11
+    val bafSizePercent = 20
+    val percent = 100
 
-    val sumCrystalOre: Float = crystalOre * 1.2f
-    val sumFerumOre: Float = ferumOre * 1.2f
+    val sumCrystalOre = crystalOre * (bafSizePercent + percent) / percent
+    val sumFerrumOre = ferrumOre * (bafSizePercent + percent) / percent
 
-    val bafCrystalOre = (sumCrystalOre - crystalOre).toInt()
-    val bafFerumOre = (sumFerumOre - ferumOre).toInt()
+    val bafCrystalOre = (sumCrystalOre - crystalOre)
+    val bafFerrumOre = (sumFerrumOre - ferrumOre)
 
     println("Кристалическая руда: $bafCrystalOre")
-    println("Железная руда: $bafFerumOre")
+    println("Железная руда: $bafFerrumOre")
 }
