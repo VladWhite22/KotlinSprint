@@ -1,9 +1,10 @@
 package org.example.lesson_3
 
 fun main() {
-    val greetings: String = "Добрый"
+    val greetingsDay: String = "Добрый день"
+    val greetingsEvening: String = "Добрый вечер"
     val name: String = "Михаил"
 
-    println("$greetings день $name!")
-    println("$greetings вечер $name!")
+    println("$greetingsDay $name!")
+    println("$greetingsEvening $name!")
 }
