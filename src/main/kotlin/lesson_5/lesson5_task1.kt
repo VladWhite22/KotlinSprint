@@ -1,9 +1,14 @@
 package org.example.lesson_5
 
 fun main() {
-    val captcha = 10
+    val number1 = 5
+    val number2 = 7
+
     println("Решите пример 5+7")
-    val ansver = readLine()?.toInt()
-    if (ansver == captcha) println("Добро пожаловать!")
-    else println("Доступ заперещен")
+
+    val ansver = readln().toInt()
+    if (ansver == number1 + number2)
+        println("Добро пожаловать!")
+    else
+        println("Доступ заперещен")
 }
