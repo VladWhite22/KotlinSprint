@@ -4,7 +4,7 @@ fun main() {
     val number1 = 5
     val number2 = 7
 
-    println("Решите пример 5+7")
+    println("Решите пример $number1+$number2")
 
     val ansver = readln().toInt()
     if (ansver == number1 + number2)
