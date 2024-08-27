@@ -7,7 +7,10 @@ fun main() {
     val numberOfBookedTablesTomorrow = 9
     val numberOfFreeTablesToday = NUMBER_OF_TABLES - numberOfBookedTablesToday
     val numberOfFreeTablesTomorrow = NUMBER_OF_TABLES - numberOfBookedTablesTomorrow
-    val BookTable = 0
+
+    println("Введите необходимое чило столов:")
+    val BookTable = readln().toInt()
+
     println(
         "[Доступность столиков на сегодня:${BookTable < numberOfFreeTablesToday}]" +
                 "\n[Доступность столиков на завтра:${BookTable <= numberOfFreeTablesTomorrow}]"
