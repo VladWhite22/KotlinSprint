@@ -4,12 +4,11 @@ fun main() {
     val numbers = 0..9
     val chars = 'a'..'z'
 
-    val numb1 = numbers.random()
-    val numb2 = numbers.random()
-    val numb3 = numbers.random()
-    val char1 = chars.random()
-    val char2 = chars.random()
-    val char3 = chars.random()
+    var password: String = ""
 
-    println("$numb1$char1$numb2$char2$numb3$char3")
+    for (i in 1..6)
+        if (i % 2 == 0) password += numbers.random()
+        else password += chars.random()
+
+    println(password)
 }
