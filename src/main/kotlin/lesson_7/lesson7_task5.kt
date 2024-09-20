@@ -4,7 +4,6 @@ fun main() {
     val numbers = 0..9
     val chars = 'a'..'z'
     val charsCaptal = 'A'..'Z'
-
     println("Введите количество символов в пароле:")
     var userCondition = readln().toInt()
 
@@ -15,13 +14,19 @@ fun main() {
         if (userCondition >= 6) break
     }
     var password = ""
-    for (i in userCondition downTo 1) {
+
+    password.add(numbers.random())
+    password.add(chars.random())
+    password.add(charsCaptal.random())
+
+    for (i in userCondition downTo 4) {
         val random = 1..3
         val r = random.random()
         when {r == 1 -> password += numbers.random()}
         when {r == 2 -> password += chars.random()}
         when {r == 3 -> password += charsCaptal.random()}
     }
+    password.shuffle()
     println(password)
     println(password.length)
 }
