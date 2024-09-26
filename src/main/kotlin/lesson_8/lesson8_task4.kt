@@ -6,11 +6,14 @@ fun main() {
     println("${pelmeni.joinToString()} \nВведите ингредиент который хотите заменить:")
 
     val userIngredient = readln()
-
-    if (userIngredient in pelmeni) {
+    val index = pelmeni.indexOf(userIngredient)
+    if (index > -1) {
         println("Введите ингредиент который хотите добавить:")
         val userIngredientNew = readln()
-        pelmeni[pelmeni.indexOf(userIngredient)] = userIngredientNew
+        pelmeni[index] = userIngredientNew
         println("Готово! Вы сохранили следующий список:\n${pelmeni.joinToString()}") }
     else println("Ингредиента в рецепте нет!")
 }
+
+
+
