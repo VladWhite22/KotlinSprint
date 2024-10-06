@@ -11,6 +11,5 @@ fun main() {
     else if (userTrow == computerTrow) println("Ничья")
     else println("Победила машина!")
 }
-fun throwDice(): Int {
-    return (1..6).random()
-}
+
+fun throwDice(range: IntRange = 1..6) = range.random()
