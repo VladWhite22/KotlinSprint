@@ -8,11 +8,11 @@ fun main() {
     println("Введите пароль:")
     val password = readln()
 
-    if (lengthValidating(login, password) == true) println("Логин или пароль недостаточно длинные!")
+    if (checkLength(login, password) == true) println("Логин или пароль недостаточно длинные!")
     else println("Добро пожаловать!")
 }
 
-fun lengthValidating(login: String, password: String): Boolean {
+fun checkLength(login: String, password: String): Boolean {
     if (login.length < PASSWORD_OR_LOGIN_LENGTH || password.length < PASSWORD_OR_LOGIN_LENGTH)
         return true
     else return false
