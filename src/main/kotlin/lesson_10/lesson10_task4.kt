@@ -9,9 +9,9 @@ fun main() {
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         val answer = readln()
 
-        if (answer == "Да") conductingRound()
+        if (answer.equals("Да", ignoreCase = true)) conductingRound()
         else println("Вы выграли:$counterHumanWin")
-    } while (answer == "Да")
+    } while (answer.equals("Да", ignoreCase = true))
 }
 
 fun conductingRound() {
@@ -22,16 +22,12 @@ fun conductingRound() {
     println("Кость бросил компьютер:$computerTrow")
 
     when {
-        userTrow > computerTrow -> println("Победило человечество!")
-    }
-    when {
-        userTrow > computerTrow -> counterHumanWin++
-    }
-    when {
+        userTrow > computerTrow -> {
+            println("Победило человечество!"); counterHumanWin++
+        }
+
         userTrow == computerTrow -> println("Ничья")
-    }
-    when {
-        userTrow < computerTrow -> println("Победила машина!")
+        else -> println("Победила машина!")
     }
 }
 
