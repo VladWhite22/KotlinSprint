@@ -1,5 +1,7 @@
 package org.example.lesson_11
 
+import kotlin.properties.Delegates
+
 fun main() {
     val user = User2(id = 1, login = "test", password = "Test", email = "test@mail")
     user.writeInBio()
@@ -13,7 +15,9 @@ class User2(
     var password: String,
     val email: String,
 ) {
-    lateinit var bio: String
+    var bio: String by Delegates.observable("") {
+            prop, old, new -> ("")
+    }
 
     fun writeInBio() {
         println("Заполните bio:")
@@ -23,6 +27,7 @@ class User2(
     fun printlnUserParameters() {
         return println(
             """
+        BIO:${bio}
         ID : ${id}
         Login : ${login}  
         Password : ${password}
