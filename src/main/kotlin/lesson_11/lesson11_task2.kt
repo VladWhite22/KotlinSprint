@@ -14,10 +14,8 @@ class User2(
     val login: String,
     var password: String,
     val email: String,
+    var bio: String? = null
 ) {
-    var bio: String by Delegates.observable("") {
-            prop, old, new -> ("")
-    }
 
     fun writeInBio() {
         println("Заполните bio:")
