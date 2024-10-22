@@ -6,11 +6,13 @@ fun main() {
 class Сategory(
     val categoryName: String,
     val categoryDescription: String,
+    val imageUrl: String,
 )
 
 class Dish(
     val dishName: String,
-    val favorit: Boolean,
+    val isFavorit: Boolean,
+    val cooking:List<String>,
 )
 
 class Ingredient(
