@@ -8,6 +8,7 @@ fun main() {
 
     room1.addUser(user1)
     room1.addUser(user2)
+    room1.updateStatus("Разговаривает")
 }
 class User(
     var avatar: String,
@@ -22,10 +23,7 @@ class Room(
     fun addUser(user: User) {
         usersList.add(user)
     }
-    fun updateStatus(nickname: User, userStatus: String) {
-        println("Введите новый nickname:")
-        nickname = readln()
-        userStatus = readln()
-        println("$nickname $userStatus")
+    fun updateStatus( userStatus: String){
+        println("$userStatus")
     }
 }
