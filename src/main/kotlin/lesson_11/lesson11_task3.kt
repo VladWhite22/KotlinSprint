@@ -8,7 +8,8 @@ fun main() {
 
     room1.addUser(user1)
     room1.addUser(user2)
-    room1.updateStatus("Разговаривает")
+    user1.updateStatus("Alex","Микрофон выключен")
+
 }
 class User(
     var avatar: String,
@@ -18,12 +19,18 @@ class User(
 class Room(
     val cover: String,
     val title: String,
-    var usersList: ArrayList<User> = ArrayList<User>(),)
-{
+    var usersList: ArrayList<User> = ArrayList<User>(),
+) {
+
     fun addUser(user: User) {
         usersList.add(user)
     }
-    fun updateStatus( userStatus: String){
-        println("$userStatus")
+
+    fun User.updateStatus(nickname: String, userStatus: String) {
+        if (nickname == this.nickname) {
+            this.userStatus = userStatus
+        }
     }
 }
+
+
