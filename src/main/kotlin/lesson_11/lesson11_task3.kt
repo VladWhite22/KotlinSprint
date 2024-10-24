@@ -8,7 +8,7 @@ fun main() {
 
     room1.addUser(user1)
     room1.addUser(user2)
-    user1.updateStatus("Alex","Микрофон выключен")
+        //user1.updateStatus("Alex","Микрофон выключен")
 
 }
 class User(
