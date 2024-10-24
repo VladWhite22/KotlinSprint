@@ -1,31 +1,32 @@
 package org.example.lesson_11
 
 fun main(){
-val forum1=Forum
+
 }
-class Forum (forumMember: ForumMember,forumMesage: ForumMesage)
 
-    class ForumMember(
-        val userId: MutableList<Int>,
-        val userName: MutableList<String>,
-    ) {
-        fun createNewUser(UserName: String) {
-            val id = userName.size
-            userName.add(UserName)
-            userId.add(id)
-        }
+class ForumMember(
+    val userId: Int,
+    val userName: String,)
+
+class ForumMesage(
+    val authoId: Int,
+    var message: String,)
+
+class Forum (){
+    val forumMembers:ArrayList<ForumMember> = ArrayList<ForumMember>()
+    val forumMesage:ArrayList<ForumMesage> = ArrayList<ForumMesage>()
+
+    fun createNewUser(userName: String,userId:Int) {
+        forumMembers.userName.add(userName)
+        forumMembers.userId.add(userId)
+    }
+    fun createNewMessage(authoId: Int,message: String) {
+        if (forumMembers.userId.contains(authoId))
+            forumMesage.message.add(message)
     }
 
-    class ForumMesage(
-        val authoId: Int,
-        var message: String,
-    ) {
-        fun createNewMessage(userId: MutableList<Int>) {
-            if (userId.contains(authoId))
-                message = readln()
-        }
-
-        fun printThread(message: String) {
-            println("$authoId:$message")
-        }
+    fun printThread(message: String) {
+        println("$authoId:$message")
     }
+
+}
