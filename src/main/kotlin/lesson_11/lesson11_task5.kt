@@ -2,31 +2,46 @@ package org.example.lesson_11
 
 fun main(){
 
-}
 
+    val forum1 = Forum()
+    forum1.createNewUser("Gor")
+    forum1.createNewUser("gfgf")
+    forum1.createNewMessage(1,"fdfdf")
+}
 class ForumMember(
-    val userId: Int,
+    var userId: Int,
     val userName: String,)
 
 class ForumMesage(
-    val authoId: Int,
+    var authoId: Int,
     var message: String,)
 
 class Forum (){
-    val forumMembers:ArrayList<ForumMember> = ArrayList<ForumMember>()
-    val forumMesage:ArrayList<ForumMesage> = ArrayList<ForumMesage>()
+    val forumMembers:MutableList<ForumMember> = mutableListOf()
+    val forumMesage:MutableList<ForumMesage> = mutableListOf()
 
-    fun createNewUser(userName: String,userId:Int) {
-        forumMembers.userName.add(userName)
-        forumMembers.userId.add(userId)
-    }
-    fun createNewMessage(authoId: Int,message: String) {
-        if (forumMembers.userId.contains(authoId))
-            forumMesage.message.add(message)
+    fun createNewUser(userName: String) {
+        var id = forumMembers.size
+        val forumMember = ForumMember(userId = id, userName)
+        forumMembers.add(forumMember)
     }
 
-    fun printThread(message: String) {
-        println("$authoId:$message")
+    fun createNewMessage(authoId: Int, message: String) {
+        val _forumMesage = ForumMesage(authoId = authoId, message = message)
+        for (i in forumMembers.userId){
+            if( i == _forumMesage.authoId)
+            forumMesage.add(_forumMesage)
+        }
+        //    fun createNewMessage(authoId: Int,message: String) {
+//        val _forumMesage = ForumMesage(authoId = authoId, message = message)
+//        var a = 0
+//        for (i in 0..999){
+//            if( forumMembers[i].userId == _forumMesage.authoId)
+//                forumMesage.add(_forumMesage)
+//            a++
+//        }
     }
-
+    fun printThread() {
+        println("${forumMembers.authoId}:${forumMesage.message}")
+    }
 }
