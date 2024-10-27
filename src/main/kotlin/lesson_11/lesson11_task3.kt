@@ -8,7 +8,7 @@ fun main() {
 
     room1.addUser(user1)
     room1.addUser(user2)
-   user1.updateStatus("Alex","Микрофон выключен")
+   room1.updateStatus("Alex","Микрофон выключен")
 }
 class User(
     var avatar: String,
@@ -25,7 +25,7 @@ class Room(
         usersList.add(user)
     }
 
-    fun User.updateStatus(nick: String, userStatus: String) {
+    fun updateStatus(nick: String, userStatus: String) {
         usersList.find {nickname == nick}?.userStatus = userStatus
     }
 }
