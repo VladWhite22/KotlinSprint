@@ -2,6 +2,7 @@ package org.example.lesson_11
 
 fun main() {
     val forum1 = Forum()
+
     forum1.createNewUser("Gor")
     forum1.createNewUser("gfgf")
     forum1.createNewMessage(1, "fdfdf")
