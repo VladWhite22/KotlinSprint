@@ -6,14 +6,12 @@ fun main() {
 }
 
 class Company(
-    var name: String?,
-    var phoneNumber: Long?,
+    var name: String,
+    var phoneNumber: Long,
     var company:String? = null, ) {
 
-    fun printCompany(){
-        when {company == null -> company = "<не указано>" }
-        when {phoneNumber == null -> phoneNumber ?: "<не указано>" }
-        when {name == null -> name = "<не указано>"}
+    fun printCompany() {
+        if(name == null) name = "<не указано>"
         println("$name $phoneNumber $company")
     }
 }
