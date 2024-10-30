@@ -3,9 +3,11 @@ package org.example.lesson_11
 fun main() {
     val forum1 = Forum()
 
-    forum1.createNewUser("Gor")
-    forum1.createNewUser("gfgf")
-    forum1.createNewMessage(1, "fdfdf")
+    forum1.createNewUser("Alex")
+    forum1.createNewUser("Oleg")
+    forum1.createNewMessage("Alex", 0, "Здравствуйте!")
+    forum1.createNewMessage("Oleg", 1, "Привет")
+    forum1.printThread()
 }
 
 class ForumMember(
@@ -13,30 +15,30 @@ class ForumMember(
     val userName: String,
 )
 
-class ForumMesage(
-    var authoId: Int,
+class ForumMessage(
+    val userName: String,
+    var authorId: Int,
     var message: String,
 )
 
 class Forum {
-    val forumMembers: MutableList<ForumMember> = mutableListOf()
-    val forumMesage: MutableList<ForumMesage> = mutableListOf()
+    private val forumMembers: MutableList<ForumMember> = mutableListOf()
+    private val forumMessage: MutableList<ForumMessage> = mutableListOf()
 
     fun createNewUser(userName: String) {
         var id = forumMembers.size
-        val forumMember = ForumMember(userId = id, userName)
-        forumMembers.add(forumMember)
+        val _forumMember = ForumMember(userId = id, userName)
+        forumMembers.add(_forumMember)
     }
 
-    fun createNewMessage(authoId: Int, message: String) {
-        val _forumMesage = ForumMesage(authoId = authoId, message = message)
-        forumMembers.find { it.userId == authoId }
-        forumMesage.add(_forumMesage)
+    fun createNewMessage(userName: String, authorId: Int, message: String) {
+        val _forumMesage = ForumMessage(userName = userName, authorId = authorId, message = message)
+        for (i in forumMembers)
+            if (i.userId == authorId && i.userName == userName) forumMessage.add(_forumMesage)
     }
 
     fun printThread() {
-        for (a in forumMembers.userId)
-        for (b in forumMembers.userName)
-            println("$a:$b")
+        for (n in forumMessage)
+            println("${n.userName}:${n.message}")
     }
 }
