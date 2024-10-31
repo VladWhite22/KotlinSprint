@@ -9,7 +9,7 @@ fun main() {
 
     val listContacts = listOf<Company1>(contact1, contact2, contact3, contact4, contact5)
 
-    listContacts.map { if (it.company != null) println(it.company) }
+    listContacts.mapNotNull { if (it.company != null) println(it.company) }
 }
 
 class Company1(
