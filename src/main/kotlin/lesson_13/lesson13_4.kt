@@ -19,7 +19,7 @@ class Company2(
     val name: String? = null,
     val phoneNumber: Long? = null,
     val company: String? = null){
-    fun printContacts() { println("${name}" + "\n${phoneNumber}" + "\n${company}") }
+    fun printContacts() { println("$name, $phoneNumber, $company") }
 }
 
 
