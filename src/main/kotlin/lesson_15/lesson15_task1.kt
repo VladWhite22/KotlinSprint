@@ -2,57 +2,47 @@ package org.example.lesson_15
 
 fun main() {
     val crucianCarp = СrucianСarp()
-    crucianCarp.crucianСarpMove()
+    crucianCarp.Swim()
 
     val gull = Gull()
-    gull.gullMove()
+    gull.Fly()
 
     val duck = Duck()
-    duck.duckMove1()
-    duck.duckMove2()
+    duck.Swim()
+    duck.Fly()
 }
 
-interface СrucianСarpMove {
-    fun crucianСarpMove() {
+interface SwimMove {
+    fun Swim() {
         return println("Плывёт")
     }
 }
 
-interface GullMove {
-    fun gullMove() {
+interface FlyMove {
+    fun Fly() {
         return println("Летит")
     }
 }
 
-interface DuckMove {
-    fun duckMove1() {
-        return println("Плывёт")
-    }
-
-    fun duckMove2() {
-        return println("Летит")
+class СrucianСarp : SwimMove {
+    override fun Swim() {
+        super.Swim()
     }
 }
 
-class СrucianСarp : СrucianСarpMove {
-    override fun crucianСarpMove() {
-        super.crucianСarpMove()
+class Gull : FlyMove {
+    override fun Fly() {
+        super.Fly()
     }
 }
 
-class Gull : GullMove {
-    override fun gullMove() {
-        super.gullMove()
-    }
-}
-
-class Duck : DuckMove {
-    override fun duckMove1() {
-        super.duckMove1()
+class Duck : SwimMove,FlyMove {
+    override fun Swim() {
+        super.Swim()
     }
 
-    override fun duckMove2() {
-        super.duckMove2()
+    override fun Fly() {
+        super.Fly()
     }
 }
 
