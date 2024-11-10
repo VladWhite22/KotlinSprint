@@ -5,33 +5,18 @@ fun main() {
     val temperature2 = Temperature(2,"Лето",25,20)
     val precipitationAmount1 = PrecipitationAmount(1, "Лето", 10, 0)
 
-    WeatherServer().SendMassege(temperature1)
+WeatherServer().SendMassege(temperature1)
     WeatherServer().SendMassege(temperature2)
     WeatherServer().SendMassege(precipitationAmount1)
 }
 
 class WeatherServer {
     fun SendMassege(parametr: WeatherStationStats) {
-        var weatherList = mutableListOf<WeatherStationStats>()
-
-        weatherList.add(parametr)
-        for (wether in weatherList) {
-            if (wether is Temperature) {
-                println(
-                    "${wether.dayNumber} ${wether.season} " +
-                            "\n${wether.dayTemperature} ${wether.nightTemperature}"
-                )
-            }
-        }
-
-        for (wether in weatherList) {
-            if (wether is PrecipitationAmount) {
-                println(
-                    "${wether.dayNumber} ${wether.season} " +
-                            "\n${wether.dayAmount} ${wether.nightAmout}"
-                )
-            }
-        }
+        if (parametr is Temperature) {
+                println( "${parametr.dayNumber} ${parametr.season} " +
+                            "\n${parametr.dayTemperature} ${parametr.nightTemperature}" ) }
+        else if (parametr is PrecipitationAmount){println( "${parametr.dayNumber} ${parametr.season} " +
+                        "\n${parametr.dayAmount} ${parametr.nightAmout}" ) }
     }
 }
 
