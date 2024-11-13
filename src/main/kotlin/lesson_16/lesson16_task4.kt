@@ -1,17 +1,19 @@
 package org.example.lesson_16
 
 fun main() {
-    fun contactManager(newStatus: String) {
-        return Order().changeStatus(newStatus)
-    }
-    contactManager("В обработке")
+    Order().contactManager("В обработке")
 }
 
 class Order {
     private val orderNumber: Int = 5
-    private var readinessStatus: String = ""
+    var readinessStatus: String = "По умолчанию"
 
-    fun changeStatus(newStatus: String) {
+    private fun changeStatus(newStatus: String) {
         readinessStatus = newStatus
+        println(readinessStatus)
+    }
+
+    fun contactManager(newStatus: String) {
+        return Order().changeStatus(newStatus)
     }
 }
