@@ -14,6 +14,6 @@ class Order {
     }
 
     fun contactManager(newStatus: String) {
-        return Order().changeStatus(newStatus)
+         changeStatus(newStatus)
     }
 }
