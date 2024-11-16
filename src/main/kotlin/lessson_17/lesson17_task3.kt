@@ -7,7 +7,7 @@ fun main() {
 
 class Folder(_name: String, _numberOfFiles: Int, _isSecret: Boolean) {
    val name = _name
-        get() = (if (isSecret == true) "Это сектретная папка"
+        get() = (if (isSecret == true) "сектретная папка"
         else field)
     val numberOfFiles = _numberOfFiles
         get() = (if (isSecret == true) 0
