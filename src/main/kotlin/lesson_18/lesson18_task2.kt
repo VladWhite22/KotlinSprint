@@ -13,26 +13,27 @@ fun main() {
 
 abstract class Dice {
     abstract val number: Int
-    open fun throwDice() {}
+    open fun throwDice() {
+        return println((1..number).random())}
 }
 
 class FourSidedDice() : Dice() {
     override val number: Int = 4
     override fun throwDice() {
-        return println((1..number).random())
+        super.throwDice()
     }
 }
 
 class SixSidedDice : Dice() {
     override val number: Int = 6
     override fun throwDice() {
-        return println((1..number).random())
+        super.throwDice()
     }
 }
 
 class EightSidedDice : Dice() {
     override val number: Int = 8
     override fun throwDice() {
-        return println((1..number).random())
+        super.throwDice()
     }
 }
