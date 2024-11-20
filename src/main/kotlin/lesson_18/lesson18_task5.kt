@@ -1,21 +1,34 @@
 package org.example.lesson_18
 
 fun main() {
-    Screen().draw(2, 1)
-    Screen().draw(2.5f, 2)
-    Screen().draw(5, 7.7f)
+    val dot1 = Dot()
+    val circle1 = Circle()
+    val square1 = Square()
+
+    dot1.draw(3.4f, 5.3f)
+    circle1.draw(2.3f, 7.6f)
+    square1.draw(8.4f, 2.9f)
 }
 
-class Screen() {
-    fun draw(x: Int, y: Int) {
-        println("Точка x:$x y:$y")
-    }
+abstract class Screen() {
+    abstract fun draw(x: Float, y: Float)
+}
 
-    fun draw(x: Int, y: Float) {
-        println("Круг x:$x y:$y ")
+class Dot : Screen() {
+    override fun draw(x: Float, y: Float) {
+        println("Точка x:$x y:$y ")
     }
+}
 
-    fun draw(x: Float, y: Int) {
+class Circle : Screen() {
+    override fun draw(x: Float, y: Float) {
+        println("Круг x:$x y:$y")
+    }
+}
+
+class Square : Screen() {
+    override fun draw(x: Float, y: Float) {
         println("Квадрат x:$x y:$y")
     }
 }
+
