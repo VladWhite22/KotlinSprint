@@ -10,24 +10,14 @@ fun main() {
     product3.printProductInfo()
 }
 
-enum class OnlineStore {
-    CLOTHING {
-        override fun printName(): String {
-            return "Одежда"
-        }
-    },
-    OFFICE_SUPPLIES {
-        override fun printName(): String {
-            return "Канцелярские товары"
-        }
-    },
-    VARIA {
-        override fun printName(): String {
-            return "Разное"
-        }
-    };
+enum class OnlineStore(val category: String) {
+    CLOTHING("Одежда"),
+    OFFICE_SUPPLIES("Канцелярские товары"),
+    VARIA("Разное");
 
-    abstract fun printName(): String
+    fun printName():String {
+        return category
+    }
 }
 
 class Product(val name: String, val id: Int, val category: String) {
