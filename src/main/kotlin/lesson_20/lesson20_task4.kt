@@ -1,6 +1,11 @@
 package org.example.lesson_20
 
 fun main() {
-    val stringList = listOf("0", "1", "2", "3", "4")
-    stringList.mapIndexed { idx, it: String -> if (idx % 2 == 0) println("Нажат элемент $it") }
+    var stringList = listOf("0", "1", "2", "3", "4")
+    var lambdaList = mutableListOf<() -> Unit>()
+
+    stringList.map { { it: String -> lambdaList.add({ println("Нажат элемент $it") }) } }
+
+    lambdaList.mapIndexed { idx, it -> if (idx % 2 == 0) it }
+
 }
