@@ -1,6 +1,5 @@
 package org.example.lesson_21
 
-
 fun main() {
     val player1 = Player1("Alex", 100, 100)
     println(player1.isHealthy())
