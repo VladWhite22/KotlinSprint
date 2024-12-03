@@ -8,6 +8,5 @@ fun main() {
 class Player1(val name: String, val fullHealth: Int, var currentHealth: Int)
 
 fun Player1.isHealthy(): Boolean {
-    return if (this.fullHealth == this.currentHealth) true
-    else false
+   return this.fullHealth == this.currentHealth
 }
